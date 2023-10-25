@@ -1,0 +1,152 @@
+/* VARIABLES */
+:root{
+    --main-color:#90ad75;
+    --black:#13131a;
+    --bg:#030200;
+    --orange-erbaut:#f17c08;
+    --blue-erbaut: #0191b6;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+/* RESET */
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    /* font-size: 62.5%; */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: #13131a;
+}
+
+.header{ 
+    position: fixed;
+    width: 100%;
+    top: 0; right: 0; left: 0;
+    background-color: var(--orange-erbaut);
+}
+.main-navbar{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 1.01rem;
+    height: 10px;
+}
+
+.main-navbar a{
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #13131a;
+}
+
+.navbar-inferi{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--bg);
+    font-size: 2rem;
+    display: none;                                     /* REMOVER DEPOIS */
+
+}
+
+.home{
+    min-height: 99vh;
+    display: flex;
+    align-items: center;
+    background:url(../images/home-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    display: none;                                     /* REMOVER DEPOIS */
+}
+
+.home .content{
+    max-width: 100rem;
+}
+
+.home .content h3{
+    font-size: 6rem;
+    text-transform: none;
+    color:#fff;
+    
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:#eee;
+}
+
+.solutions{
+    text-align: center;
+}
+
+.solutions .card-deck{
+    height: 500px;
+    margin: 5%;
+
+}
+.solutions .card{
+    display: inline-block;
+    position: relative;
+    background-color: var(--blue-erbaut);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.solutions .card img{
+    width: 50%;
+}
+.solutions .card h5{
+    color: #fff;
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+.solutions .card a{
+    background-color: var(--orange-erbaut);
+    border-radius: 10px 40px 40px ;
+}
+
+.solutions .card ul{
+    text-align: left;
+}
+
+.solutions .card li{
+    color: #fff;
+    list-style: square;
+    text-transform: none;
+}
+
+.solutions .card .footer{
+    position: absolute;
+    bottom: 0px;
+}
