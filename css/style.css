@@ -40,7 +40,8 @@ html::-webkit-scrollbar-thumb{
 }
 
 body{
-    background: #13131a;
+    background-color: #13131a;
+    /* background-image: url('../images/insta-bg.jpg'); */
 }
 
 .header{ 
@@ -48,6 +49,7 @@ body{
     width: 100%;
     top: 0; right: 0; left: 0;
     background-color: var(--orange-erbaut);
+
 }
 .main-navbar{
     margin-top: 20px;
@@ -56,6 +58,7 @@ body{
     align-items: center; 
     font-size: 1.01rem;
     height: 10px;
+    z-index: -1000;
 }
 
 .main-navbar a{
@@ -71,7 +74,7 @@ body{
     justify-content: center;
     background-color: var(--bg);
     font-size: 2rem;
-    display: none;                                     /* REMOVER DEPOIS */
+    /* display: none;                                     REMOVER DEPOIS */
 
 }
 
@@ -83,7 +86,7 @@ body{
     background-size: cover;
     background-position: center;
     justify-content: center;
-    display: none;                                     /* REMOVER DEPOIS */
+    /* display: none;                                     REMOVER DEPOIS */
 }
 
 .home .content{
@@ -107,46 +110,167 @@ body{
 
 .solutions{
     text-align: center;
+    margin-top: 5%;
 }
 
-.solutions .card-deck{
-    height: 500px;
-    margin: 5%;
-
-}
-.solutions .card{
-    display: inline-block;
-    position: relative;
-    background-color: var(--blue-erbaut);
-    padding: 3rem;
-    border-radius: 20px;
+.solutions .solutions-text{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.solutions .card img{
-    width: 50%;
-}
-.solutions .card h5{
-    color: #fff;
-    font-size: 28px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.solutions .solutions-text h3{
+    font-weight: 700;
+    font-size: 35px;    
     text-transform: uppercase;
 }
-.solutions .card a{
-    background-color: var(--orange-erbaut);
-    border-radius: 10px 40px 40px ;
-}
 
-.solutions .card ul{
-    text-align: left;
-}
-
-.solutions .card li{
-    color: #fff;
-    list-style: square;
+.solutions .solutions-text p,
+.solutions .solutions-text b{
     text-transform: none;
+    font-size: 18px;
 }
 
-.solutions .card .footer{
+.solutions .box-container{
+    display: inline-flex;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    margin: 50px;
+}
+
+.solutions .box-container .box{
+    height: 500px;
+    width: 350px;
+    text-align: center;
+    border:var(--border);
+    padding: 5rem;
+    background-color: var(--blue-erbaut);
+    border-radius: 5%;
+}
+
+.solutions .box-container .box .image{
+    padding: .5rem 0;
+}
+
+.solutions .box-container .box .image img{
+    height: 15rem;
+}
+
+.solutions .box-container .box .content{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.solutions .box-container .box .content h3{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.solutions .box-container .box .content .list{
+    color:#fff;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.solutions .box-container .box .content .list li{
+    text-transform: none;
+    list-style: none;
+}
+
+.solutions .box-container .box .footer{
+    margin-top: auto;
+}
+.solutions .box-container .box .footer a{
+    margin-top: 20px;
+    background-color: var(--orange-erbaut);
+    color: var(--black);
+    border-radius: 10px 40px 40px ;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.instagram{
+    position: relative;
+}
+
+.instagram .text-content{
     position: absolute;
-    bottom: 0px;
+    text-align: left;
+    color: #eee;
+    width: 30%;
+    top: 35%;
+    left: 15%;
+}
+
+.instagram .text-content a{
+    background-color: var(--orange-erbaut);
+    color: var(--black);
+    border-radius: 10px 40px 40px ;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.instagram .content{
+    background-color: var(--black);
+    width: 100%;
+
+    margin-bottom: 5%;
+}
+
+.instagram .container{
+    margin-left: 50%;
+}
+
+.post-minimal-2 {
+	max-width: 220px;
+}
+
+.post-minimal-2-title a, .post-minimal-2-title a:focus, .post-minimal-2-title a:active {
+	color: #50ba87;
+}
+
+.post-minimal-2-title a:hover {
+	color: #01b3a7;
+}
+
+.post-minimal-2-time {
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+	letter-spacing: .075em;
+	font-family: "Montserrat", sans-serif, Arial, sans-serif;
+	color: #151515;
+}
+
+* + .post-minimal-2 {
+	margin-top: 24px;
+}
+
+* + .post-minimal-2-time {
+	margin-top: 10px;
+}
+
+.post-minimal-2 + .post-minimal-2 {
+	margin-top: 26px;
+}
+
+
+
+
+
+
+.whatsapp-icon a{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px rgb(36, 35, 35);
+    z-index: 1000;
+}
+
+.whatsapp-icon i {
+    margin-top: 16px;
+    transform: scale(1.2);
 }
