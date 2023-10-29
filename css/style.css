@@ -2,6 +2,8 @@
 :root{
     --main-color:#90ad75;
     --black:#13131a;
+    --black-fade: #00000070;
+    --white: #fff;
     --bg:#030200;
     --orange-erbaut:#f17c08;
     --blue-erbaut: #0191b6;
@@ -35,7 +37,7 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-    background: #fff;
+    background: var(--white);
     border-radius: 5rem;
 }
 
@@ -90,13 +92,17 @@ body{
 }
 
 .home .content{
+    background-color: var(--black-fade);
     max-width: 100rem;
+    text-align: center;
+    padding: 20px;
+    border-radius: 1%;
 }
 
 .home .content h3{
     font-size: 6rem;
     text-transform: none;
-    color:#fff;
+    color:var(--white);
     
 }
 
@@ -105,12 +111,20 @@ body{
     font-weight: lighter;
     line-height: 1.8;
     padding:1rem 0;
-    color:#eee;
+    color:var(--white);    
+    text-transform: none;
 }
 
+.home a{
+    background-color: var(--blue-erbaut);
+    border-radius: 5%;
+    color: var(--white);
+}
 .solutions{
     text-align: center;
     margin-top: 5%;
+    display: none;                                                /* REMOVER DEPOIS */
+
 }
 
 .solutions .solutions-text{
@@ -144,6 +158,7 @@ body{
     padding: 5rem;
     background-color: var(--blue-erbaut);
     border-radius: 5%;
+    border-color: var(--black-fade);
 }
 
 .solutions .box-container .box .image{
@@ -158,15 +173,15 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .solutions .box-container .box .content h3{
-    color:#fff;
+    color: var(--white);
     font-size: 2.5rem;
 }
 
 .solutions .box-container .box .content .list{
-    color:#fff;
-    font-size: 1.5rem;
+    color: var(--black);
+    font-size: 1.7rem;
     text-align: left;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .solutions .box-container .box .content .list li{
@@ -174,26 +189,33 @@ body{
     list-style: none;
 }
 
-.solutions .box-container .box .footer{
+.solutions .box-container .box .box-footer{
     margin-top: auto;
 }
-.solutions .box-container .box .footer a{
-    margin-top: 20px;
+.solutions .box-container .box .box-footer a{
+    margin-top: 0;
     background-color: var(--orange-erbaut);
     color: var(--black);
     border-radius: 10px 40px 40px ;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.solutions .box-container .box .box-footer a:hover{
+    background-color: var(--black-fade);
+    color: var(--white);
 }
 
 .instagram{
     position: relative;
+    display: none;                                                /* REMOVER DEPOIS */
 }
 
 .instagram .text-content{
     position: absolute;
     text-align: left;
-    color: #eee;
+    color: var(--white);
     width: 30%;
     top: 35%;
     left: 15%;
@@ -217,16 +239,41 @@ body{
     margin-left: 50%;
 }
 
+.partners .text-partners{
+    text-align: center;
+    margin: 5% 0;
+}
+
+.partners .text-partners h3{
+    font-size: 55px;
+}
+
+.contact-form {
+    position: flex;
+    background-color: var(--orange-erbaut);
+    min-height: 50vh;
+    
+}
+
+.contact-form .form-contact-us .form-field{
+    
+}
+
+.contact-form .form-contact-us input{ 
+    display: inline-block;
+    width: 400px;
+    
+}
 .post-minimal-2 {
 	max-width: 220px;
 }
 
 .post-minimal-2-title a, .post-minimal-2-title a:focus, .post-minimal-2-title a:active {
-	color: #50ba87;
+	color: var(--orange-erbaut);
 }
 
 .post-minimal-2-title a:hover {
-	color: #01b3a7;
+	color: var(--blue-erbaut);
 }
 
 .post-minimal-2-time {
@@ -244,33 +291,123 @@ body{
 
 * + .post-minimal-2-time {
 	margin-top: 10px;
+    color: var(--white);
 }
 
 .post-minimal-2 + .post-minimal-2 {
 	margin-top: 26px;
 }
 
-
-
-
-
-
-.whatsapp-icon a{
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 1px 1px 2px rgb(36, 35, 35);
-    z-index: 1000;
+.icon{
+    color: var(--white);
+    list-style-type: none;
+    display: flex;
+    margin-left: -25px;
+    
 }
 
-.whatsapp-icon i {
-    margin-top: 16px;
-    transform: scale(1.2);
+.grid-icon-social-medias{
+    margin-left: 25px;
+    margin-top: -38%;
+}
+.social-medias a{
+    margin: 20px 20px 0 0;
+    font-size: 4rem;
+}
+
+.social-medias a:hover{
+    color: var(--orange-erbaut);
+    text-decoration: dashed;
+}
+
+.footer{
+    background-color: var(--black);
+}
+
+.footer .row{
+    margin-top: 5%;
+
+}
+
+.footer li{
+    list-style-type: none;
+}
+
+.footer h6{
+    color: var(--white);
+    text-transform: none;
+    font-size: 15px;
+}
+
+.footer .contact{
+    margin: 25px;
+}
+.footer .contact a{
+    margin-left:5px;
+}
+
+.footer .footer-links{
+    display: inline-block;
+    padding: 20px;
+    /*background-color: var(--black-fade);*/
+    border-radius: 2%;
+    text-align: left;
+    
+}
+
+.footer .footer-links a, .button-decoration a{
+    display: block;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--white);
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: none;
+    position: relative;
+    transition: all .35s;
+  }
+  
+.footer .footer-links a, .button-decoration a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+.footer .footer-links a:after, .button-decoration a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--orange-erbaut);
+    transition: all .35s;
+  }
+  
+  
+.footer .footer-links a:hover:after, .button-decoration a:hover:after{
+    width: 100%;
+  }
+
+
+.footer .footer-links a:hover{
+    /*padding: 5px;
+    background-color: var(--black-fade);*/
+    color: var(--white);
+    text-decoration: dashed;
+}
+.footer .rights{
+    margin-top: -30%;
+    color: var(--white);
+    text-transform: none;
+}
+
+.blue-button a{
+    background-color: var(--blue-erbaut);
+    color: var(--black);
+    border-radius: 2%;
 }
