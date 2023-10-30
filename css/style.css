@@ -120,11 +120,15 @@ body{
     border-radius: 5%;
     color: var(--white);
 }
+
+#header{
+    z-index: 1000;
+}
+
 .solutions{
     text-align: center;
     margin-top: 5%;
-    display: none;                                                /* REMOVER DEPOIS */
-
+    /* display: none;                                                REMOVER DEPOIS */
 }
 
 .solutions .solutions-text{
@@ -209,7 +213,7 @@ body{
 
 .instagram{
     position: relative;
-    display: none;                                                /* REMOVER DEPOIS */
+    /* display: none;                                                REMOVER DEPOIS */
 }
 
 .instagram .text-content{
@@ -239,31 +243,47 @@ body{
     margin-left: 50%;
 }
 
+.partners{
+    margin-bottom: 3%;
+}
 .partners .text-partners{
     text-align: center;
-    margin: 5% 0;
+    margin: 3% 0;
 }
 
 .partners .text-partners h3{
-    font-size: 55px;
+    font-size: 35px;
 }
 
 .contact-form {
-    position: flex;
-    background-color: var(--orange-erbaut);
+    position: relative;
+    /* background-color: var(--orange-erbaut); */
+    background-image: url('../images/insta-bg.jpg');
+    background-size: cover;
     min-height: 50vh;
+    width: 100%;
     
 }
 
-.contact-form .form-contact-us .form-field{
-    
+.contact-form .form-field{
+    text-align: center;
+    line-height: 80px;
+    margin-left: 15%;
 }
 
+.contact-form .form-field .form{
+    line-height: 100px;
+}
 .contact-form .form-contact-us input{ 
     display: inline-block;
     width: 400px;
-    
+    border-radius: 5px 25px;    
 }
+
+.contact-form .form-contact-us a{
+    border-radius: 5px;
+}
+
 .post-minimal-2 {
 	max-width: 220px;
 }
@@ -349,6 +369,7 @@ body{
 .footer .footer-links{
     display: inline-block;
     padding: 20px;
+    margin-left: -20px;
     /*background-color: var(--black-fade);*/
     border-radius: 2%;
     text-align: left;
@@ -408,6 +429,6 @@ body{
 
 .blue-button a{
     background-color: var(--blue-erbaut);
-    color: var(--black);
-    border-radius: 2%;
+    color: var(--white);
+    border-radius: 5px;
 }
