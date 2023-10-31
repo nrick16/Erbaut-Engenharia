@@ -1,12 +1,18 @@
+/* IMPORTS */
+
 /* VARIABLES */
 :root{
     --main-color:#90ad75;
     --black:#13131a;
     --black-fade: #00000070;
+    --black-max-fade:#00000023;
+    --black-min-fade:#000000d1;
     --white: #fff;
     --bg:#030200;
     --orange-erbaut:#f17c08;
+    --orange-fade: #f17c087b;
     --blue-erbaut: #0191b6;
+    --blue-fade: #0192b6b4;
     --border:.1rem solid rgba(255,255,255,.3);
 }
 
@@ -76,7 +82,21 @@ body{
     justify-content: center;
     background-color: var(--bg);
     font-size: 2rem;
+    height: 80px;
     /* display: none;                                     REMOVER DEPOIS */
+}
+.navbar-inferi img{
+    margin-right: -65px;
+}
+
+.navbar-inferi .collapse { 
+    transform: translate(0, 60%);
+}
+
+.navbar-inferi .collapse .nav-link{
+    font-size: 14px;
+    color: var(--white);
+    margin-left: 55px;
 
 }
 
@@ -92,23 +112,38 @@ body{
 }
 
 .home .content{
-    background-color: var(--black-fade);
-    max-width: 100rem;
-    text-align: center;
+    /* background-color: var(--black-fade); */
+    margin-top: 15%;
+    height: 640px;
+    width: 1280px;
+    /* max-width: 90%; */
     padding: 20px;
+    text-align: center;
     border-radius: 1%;
+    font-weight: 900;
+    font-family: 'Anton', sans-serif;
 }
 
 .home .content h3{
+    background-color: var(--black-max-fade);
+    border-radius: 5px 40px 40px ;
     font-size: 6rem;
     text-transform: none;
     color:var(--white);
-    
+    padding: 20px; 
 }
 
+.home .subtext-button{
+    background-color: var(--black-max-fade);
+    border-radius: 5px 40px 40px ;
+    transform: translate(0, 50%);
+    padding: 10px;
+    width: 55%;
+}
 .home .content p{
-    font-size: 2rem;
+    font-size: 3.2rem;
     font-weight: lighter;
+    text-align: center;
     line-height: 1.8;
     padding:1rem 0;
     color:var(--white);    
@@ -116,8 +151,11 @@ body{
 }
 
 .home a{
+    
+    width: 70%;
+}
+.home a:hover{
     background-color: var(--blue-erbaut);
-    border-radius: 5%;
     color: var(--white);
 }
 
@@ -136,6 +174,7 @@ body{
 }
 
 .solutions .solutions-text h3{
+    color: var(--blue-erbaut);
     font-weight: 700;
     font-size: 35px;    
     text-transform: uppercase;
@@ -155,18 +194,24 @@ body{
 }
 
 .solutions .box-container .box{
-    height: 500px;
+    height: 600px;
     width: 350px;
     text-align: center;
     border:var(--border);
     padding: 5rem;
-    background-color: var(--blue-erbaut);
+    background-color: var(--black-min-fade);
     border-radius: 5%;
-    border-color: var(--black-fade);
+    border-color: var(--blue-erbaut);
+    border-width: 10px;
+    
 }
-
+.solutions .box-container .box .box-header{
+    height: 450px;
+}
 .solutions .box-container .box .image{
     padding: .5rem 0;
+    background-color: var(--orange-erbaut);
+    border-radius: 50px;
 }
 
 .solutions .box-container .box .image img{
@@ -182,19 +227,20 @@ body{
 }
 
 .solutions .box-container .box .content .list{
-    color: var(--black);
+    color: var(--white);
+    font-weight: 600;
     font-size: 1.7rem;
     text-align: left;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .solutions .box-container .box .content .list li{
     text-transform: none;
-    list-style: none;
+    list-style: square;
 }
 
 .solutions .box-container .box .box-footer{
-    margin-top: auto;
+    transform: translate(0, 100%);
 }
 .solutions .box-container .box .box-footer a{
     margin-top: 0;
@@ -204,6 +250,7 @@ body{
     text-transform: uppercase;
     font-size: 1.4rem;
     width: 100%;
+    
 }
 
 .solutions .box-container .box .box-footer a:hover{
@@ -252,6 +299,8 @@ body{
 }
 
 .partners .text-partners h3{
+    color: var(--blue-erbaut);
+    font-weight: 600;
     font-size: 35px;
 }
 
@@ -260,19 +309,39 @@ body{
     /* background-color: var(--orange-erbaut); */
     background-image: url('../images/insta-bg.jpg');
     background-size: cover;
-    min-height: 50vh;
-    width: 100%;
-    
+    min-height: 70vh;
+    width: 100%;   
+    padding: 20px;
+}
+
+.contact-form h3{
+    color: var(--blue-erbaut);
+    background-color: var(--black-max-fade);
+    text-transform: none;
+    font-size: 4rem;
+    font-family: 'Anton', sans-serif;    
 }
 
 .contact-form .form-field{
     text-align: center;
-    line-height: 80px;
-    margin-left: 15%;
+    line-height: 50px;
+}
+.contact-form .form-field .map{
+    position: relative;
+    justify-content: center;
+    margin-left: 40%;
+    width: 50%;
+    /* margin-top: -2000px; */
+    /* background-color: red; */
+    transform: translate(0%, -50%);
+}
+.contact-form .form-field .form{
+    /* line-height: 100px; */
 }
 
-.contact-form .form-field .form{
-    line-height: 100px;
+.contact-form .form-contact-us{
+    margin-top: 180px;
+    transform: translate(-20%, 0%);
 }
 .contact-form .form-contact-us input{ 
     display: inline-block;
@@ -406,12 +475,13 @@ body{
     width: 0;
     height: 100%;
     background: var(--orange-erbaut);
-    transition: all .35s;
+    transition: all 1.35s;
   }
   
   
 .footer .footer-links a:hover:after, .button-decoration a:hover:after{
     width: 100%;
+    
   }
 
 
@@ -427,8 +497,21 @@ body{
     text-transform: none;
 }
 
-.blue-button a{
+.blue-button{
     background-color: var(--blue-erbaut);
     color: var(--white);
     border-radius: 5px;
+}
+
+.button-style a{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-color: var(--orange-erbaut);
+    color: var(--black);
+    border-radius: 5px 40px 40px ;
+}
+.button-style a:hover{
+    background-color: var(--blue-erbaut);
+    color: var(--white);
 }
