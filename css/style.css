@@ -84,6 +84,7 @@ body{
     font-size: 1.01rem;
     height: 10px;
     z-index: -1000;
+    
 }
 
 .main-navbar a{
@@ -103,7 +104,7 @@ body{
     /* display: none;                                     REMOVER DEPOIS */
 }
 .navbar-inferi img{
-    margin-right: -65px;
+    margin-right: 300px;
 }
 
 .navbar-inferi .collapse { 
@@ -115,6 +116,10 @@ body{
     color: var(--white);
     margin-left: 55px;
 
+}
+
+.navbar-mobile{
+    display: none;
 }
 
 .home{
