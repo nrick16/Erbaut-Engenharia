@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Navbar Transparente</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url(images/home-img\ -\ Copia.jpg);
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Certifique-se de que a barra de navegação fique acima do conteúdo */
+    transition: background-color 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.5); /* Inicialmente transparente */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.content {
+    height: 1500px; /* Adiciona um pouco de altura para rolar a página */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- Seu conteúdo aqui -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+
+        // Ajusta a opacidade com base na posição de rolagem
+        navbar.style.backgroundColor = `rgba(51, 51, 51, ${scrollPosition > 100 ? 1 : 0.5})`;
+    });
+});
+
+    </script>
+</body>
+</html>

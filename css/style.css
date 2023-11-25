@@ -74,8 +74,14 @@ body{
     width: 100%;
     top: 0; right: 0; left: 0;
     background-color: var(--orange-erbaut);
-
+    transition: 0.5s;
 }
+.header.sticky{
+    color: #fff;
+    background:#000;
+    height:60px;
+    transition: 0.5s;
+  }
 .main-navbar{
     margin-top: 20px;
     display: flex;
@@ -98,24 +104,30 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--bg);
+    background-color: var(--white);
     font-size: 2rem;
     height: 80px;
     /* display: none;                                     REMOVER DEPOIS */
 }
 .navbar-inferi img{
-    margin-right: 300px;
+    position: absolute;
+    margin-left: -50rem;
 }
 
 .navbar-inferi .collapse { 
-    transform: translate(0, 20%);
+    transform: translate(60%, 20%);
 }
 
 .navbar-inferi .collapse .nav-link{
     font-size: 14px;
-    color: var(--white);
+    color: var(--black);
     margin-left: 55px;
-
+    text-transform: uppercase;
+}
+.navbar-inferi .collapse .nav-link:hover{
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 3%;
 }
 
 .navbar-mobile{
@@ -123,6 +135,7 @@ body{
 }
 
 .home{
+    margin-top: 110px;
     min-height: 99vh;
     display: flex;
     align-items: center;
