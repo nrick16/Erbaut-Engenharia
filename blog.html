@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo-mini.png" type="image/x-icon">
+    <title>Erbaut - Blog</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/over-style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- font google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+
+        .blog-text {
+            margin-top: 20%;
+            text-align: center;
+        }
+
+        .blog-text h3 {
+            color: var(--blue-erbaut);
+            font-weight: 700;
+            font-size: 35px;
+            text-transform: uppercase;
+        }
+
+        .blog-text p,
+        .blog-text b {
+            text-transform: none;
+            font-size: 18px;
+        }
+
+        #galeria {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .imagem-container img,
+        .video-container video {
+            width: 400px;
+            height: 400px;
+            z-index: 100;
+            display: block;
+        }
+
+        .video-container,
+        .imagem-container {
+            background-color: rgb(3, 3, 3);
+            padding: 10px;
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+            margin-top: 0px;
+            transition: filter 0.3s ease;
+        }
+
+        .escurecimento {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Cor de fundo com opacidade */
+            opacity: 0;
+            /* Inicialmente oculto */
+            transition: opacity 0.3s ease;
+            /* Transição para suavizar a exibição/ocultação */
+        }
+
+        .texto-sobreposto,
+        .texto-sobreposto-video {
+            /* display: none; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 99;
+            opacity: 0;
+            /* Inicialmente oculto */
+            transition: opacity 0.3s ease;
+        }
+
+        .imagem-container:hover,
+        .video-container:hover {
+            filter: brightness(0.8);
+            /* Escurecer a mídia quando o mouse passa por cima */
+        }
+
+        .imagem-container:hover .escurecimento,
+        .video-container:hover .escurecimento,
+        .imagem-container:hover .texto-sobreposto,
+        .video-container:hover .texto-sobreposto-video {
+            opacity: 1;
+            /* Tornar visível quando o mouse passa por cima */
+        }
+
+    </style>
+    <title>Imagens e Textos da API do Instagram</title>
+
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="scroll-opacity" id="elementToFade">
+        <div class="main-navbar">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <div class="nav-links">
+                <!-- ... -->
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html#solutions">soluções</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#instagram">instagram
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#partners">parceiros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html#footer">contato</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="navbar-inferi ">
+          <div class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#">
+                <img src="images/logo-vet-white.png" alt="">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">recarga de carros elétricos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">tecnologia
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">sobre nós</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-mobile">
+          <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+            <div class="bg-dark p-4">
+              <h5 class="text-body-emphasis h4">Collapsed content</h5>
+              <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+            </div>
+          </div>
+          <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+      </header>
+
+    <div class="blog-text">
+        <h3 class="heading"> Nossas últimas postagens</h3>
+        <p><b> Que seu condomínio e empresa estejam preparados para a mobilidade hoje!</b><br>
+            Contrate seu carregador de carro elétrico por assinatura instalado, com monitoramento e manutenção inclusos
+        </p>
+    </div>
+    <!-- RECEBENDO OS POSTS DO INSTAGRAM NA DIV -->
+    <div id="galeria"></div>
+
+    <script>
+
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/fadeNavbar.js"></script>
+</body>
+
+</html>

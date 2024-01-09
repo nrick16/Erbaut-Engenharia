@@ -1,47 +1,123 @@
-// Ultimo post do Instagram (IMAGEM)
-$(function () {
+// ---------------------------------------- TOKEN DE ACESSO DA API DO INSTAGRAM ---------------------------------------
+const token = 'IGQWRPengtdTZADU2lSMUhkajNkUDZAORXE3WHJ6ZAXJKLXVWeVByZAVF5UUp3dTc0N0FZAYzl3STBEeGtDUzZAFaGpRRmF6MG9ySjcxVVh5X3l2b1QxWW92QnJTLUZANN25VeEdlVFBwbllCODY5Nk9yZA0hMd1BNMTBLVlUZD'
+const url = "https://graph.instagram.com/me/media?access_token=" + token + "&fields=media_url,media_type,caption,permalink"
 
-    //const token = "IGQWRQaDdkR0NxWlhMQ0ltY1R3cVVOeXlEZA0U3SnlwZAXUycTRlZAENDcW8xbzYxdkY0WDBLdzZAMZA0gwQzY3OE1EdTg4VmE4YV96aVFBbGxOR19ZAeW0za2lKWGtTd2U1YkJiTWp6M0Y2V0J5SURTV25vcnBvaWNGNjAZD"
-    const token = "IGQWROSU9yMG0zWWdrbG8xT2Q0dl9YQmc5NXM4SXh6Vjh1aWhvLVJDNENsMGt2Mmptb29FQURRRVFQUGN2UmVyRmhxZATZAuUVltZA19RWmpOaTBEcXUycXQ5d0JEYTN0YXdfXzJPQTZARYkp2djg1WmRBQm82VkNwOTQZD"
-    const url = "https://graph.instagram.com/me/media?access_token=" + token + "&fields=media_url,media_type,caption,permalink"
+// Endpoint da API do Instagram para obter informações sobre as postagens do usuário
+// const endpoint = `https://graph.instagram.com/v12.0/${userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${token}`;
 
-    $.get(url).then(function (response) {
-        console.log('return: ', response.data);
-        
-        // Variável contendo o link da ultima imagem do instagram
-        const last_post = response.data[0];
-        const dataJson = response.data;
-        let content = '<div class="row" style="padding-left:5px">';
+// --------------------------------------------------------------------------------------------------------------------   
+// -------------------------------- CAPTURA TODOS OS POSTS E COLOCA NO GRID -------------------------------------------   
+// Obtendo a referência da div onde as imagens serão exibidas
+const galeriaDiv = document.getElementById('galeria');
 
-        const linkDaImagem = response.data[0].media_url;
-        const textPost = last_post.caption !== null ? last_post.caption : '';
-       
-        // Obtendo a referência da tag IMG pelo ID e atribuindo a variável ao atributo src
-        document.getElementById('imagem-insta').src = linkDaImagem;
-        document.getElementById('titulo-insta').textContent = textPost;
+// Fazendo a requisição à API do Instagram
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    // Iterando sobre as postagens recebidas
+    data.data.forEach(postagem => {
+      if (postagem.media_type === 'IMAGE') {
+        // Criando uma div container para cada imagem
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('imagem-container');
 
-        for(let p = 0; p < response.data.length; p++){
-                console.log('return do response Data: ', response.data[p]);
-                console.log('return do response media type: ', response.data[p].media_type);
-                let type = response.data[p].media_type;
-                console.log('return do response Data: ',type);
+        // Criando a imagem
+        const imagemElement = document.createElement('img');
+        imagemElement.src = postagem.media_url;
+        imagemElement.alt = 'Imagem'; // Adicione um texto alternativo
 
-                if(response.data[p].media_type === 'IMAGE')   {
-                    console.log('return do if media URL: ', response.data[p].media_url);
-                    let feed = document.getElementById('insta').src = response.data[p].media_url;
+        // Criando a camada de escurecimento
+        const escurecimento = document.createElement('div'); // <-----------------------
+        escurecimento.classList.add('escurecimento');
+        divContainer.appendChild(escurecimento);
 
-                    content += '<div><img id="insta" alt=""></div>';
-                }
-        }
-        content += '</div>';
-        
-    })
+        // Criando o texto sobreposto
+        const textoSobreposto = document.createElement('div');
+        textoSobreposto.classList.add('texto-sobreposto');
+        textoSobreposto.textContent = postagem.caption;
 
-});
+        // Adicionando a imagem e o texto à div container
+        divContainer.appendChild(imagemElement);
+        divContainer.appendChild(textoSobreposto);
 
+        // Adicionando a div container à div principal
+        galeriaDiv.appendChild(divContainer);
+      } else if (postagem.media_type === 'VIDEO') {
+        // Criando uma div container para cada vídeo
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('video-container');
 
+        // Criando o vídeo
+        const videoElement = document.createElement('video');
+        videoElement.src = postagem.media_url;
+        videoElement.controls = true; // Adicionar controles de reprodução
 
-window.addEventListener('scroll', function(){
-    var menu = document.querySelector('.menu');
-    menu.classList.toggle('sticky', window.scrollY > 0);
+        // Criando a camada de escurecimento
+        const escurecimento = document.createElement('div'); // <------------------------------
+        escurecimento.classList.add('escurecimento');
+        divContainer.appendChild(escurecimento);
+
+        // Criando o texto sobreposto para vídeos
+        const textoSobreposto = document.createElement('div');
+        textoSobreposto.classList.add('texto-sobreposto-video');
+        textoSobreposto.textContent = postagem.caption;
+
+        // Adicionando o vídeo e o texto à div container
+        divContainer.appendChild(videoElement);
+        divContainer.appendChild(textoSobreposto);
+
+        // Adicionando a div container à div principal
+        galeriaDiv.appendChild(divContainer);
+      }
+    });
   })
+  .catch(error => console.error('Erro na requisição à API do Instagram:', error));
+
+// --------------------------------------------------------------------------------------------------------------------   
+// -------------------------------- CAPTURA O ULTIMO POST ------------------------------------------------------------- 
+const ultimaMidiaDiv = document.getElementById('ultima-midia');
+
+// Fazendo a requisição à API do Instagram
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    // Verificando se há alguma postagem
+    if (data.data.length > 1) {
+      // Obtendo a última postagem
+      const ultimaPostagem = data.data[0];
+
+      // Criando uma div container para a última mídia
+      const divContainer = document.createElement('div');
+      divContainer.classList.add('media-container');
+
+      // Criando a mídia (imagem ou vídeo)
+      const mediaElement = ultimaPostagem.media_type === 'IMAGE'
+        ? document.createElement('img')
+        : document.createElement('video');
+
+      mediaElement.src = ultimaPostagem.media_type === 'IMAGE'
+        ? ultimaPostagem.media_url
+        : ultimaPostagem.media_url;
+
+      if (ultimaPostagem.media_type === 'VIDEO') {
+        mediaElement.controls = true; // Adicionar controles de reprodução para vídeos
+      }
+
+      // Criando o texto sobreposto
+      const textoSobreposto = document.createElement('div');
+      textoSobreposto.classList.add('texto-sobreposto');
+      textoSobreposto.textContent = ultimaPostagem.caption;
+
+      // Adicionando a mídia e o texto à div container
+      divContainer.appendChild(mediaElement);
+      divContainer.appendChild(textoSobreposto);
+
+      // Adicionando a div container à div principal
+      ultimaMidiaDiv.appendChild(divContainer);
+    }
+  })
+  .catch(error => console.error('Erro na requisição à API do Instagram:', error));
+
+
+
+ 

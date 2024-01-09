@@ -48,10 +48,11 @@
 @media (max-width:1300px){
    
     .navbar-inferi img{
-        background-color: blue;
+        background-color: rgba(249, 241, 241, 0.015);
         margin-left: 10%;
         /* transform: translate(0%, 0%); */
     }
+
     .navbar-inferi .collapse{
         transform: translate(20%, 20%);
     }

@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="css/over-style.css">
     <style>
         body {
-            /* background-color: rgb(0, 0, 0); */
+            background-color: rgb(0, 0, 0);
         }
 
         .content-insta-box {
+            background-color: #010101;
             display: flex;
             text-align: center;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -26,7 +27,7 @@
         }
 
         .text-content-insta-box {
-            margin-top: 20%;
+            margin-top: 25%;
             margin-left: 3%;
             /* background-color: rgb(232, 232, 221); */
             width: 500px;
@@ -34,10 +35,17 @@
 
         }
 
+        .insta-last-post-text {
+            /* H3 P A */
+            margin-top: -25%;
+        }
+
         .container-insta-box {
-            margin-top: 3%;
-            margin-left: 0;
-            display: flex;
+            /* background-color: rgb(43, 0, 255); */
+            width: 600px;
+            margin-top: 1%;
+            margin-left: 5%;
+            display: block;
         }
 
         .btn {
@@ -50,6 +58,33 @@
             justify-content: left;
             width: 80%;
         }
+
+        .post-insta {
+            /* background-color: aqua; */
+            width: 400px;
+            z-index: 100;
+            display: flex;
+        }
+
+        .post-insta img,
+        .post-insta video {
+            width: auto;
+            height: 600px;
+        }
+
+        .texto-sobreposto {
+            position: absolute;
+            top: 280px;
+            left: -480px;
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Fundo semi-transparente */
+            color: white;
+            padding: 10px;
+            /* Adiciona algum espaço ao redor do texto */
+            box-sizing: border-box;
+            /* Garante que o preenchimento não aumente as dimensões do elemento */
+        }
     </style>
 
 </head>
@@ -57,23 +92,28 @@
 <body>
     <div class="content-insta-box">
         <div class="text-content-insta-box button-style btn-generic">
-            <h3>Veja nossa última postagem do Instagram</h3>
-            <p id="titulo-insta" style="color: azure;"> consequuntur fugiat? Architecto labore nisi enim iste facilis!
-            </p>
-            <a href="#" class="btn btn-x">IR PARA O INSTAGRAM</a>
+            <div class="insta-last-post-text">
+                <h3>Veja nossa última postagem do Instagram</h3>
+                <!-- <p id="titulo-insta" style="color: azure;">-
+                </p> -->
+                <a href="instagram.html" target="_blank" class="btn btn-x">IR PARA O INSTAGRAM</a>
+            </div>
         </div>
         <div class="container-insta-box">
             <!-- <h1 class="text-center w-100">Instagram</h1> -->
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <!-- <img id="imagem-insta" onerror="exibirImagemAlternativa()" alt=""> -->
+                <div class="post-insta col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <!-- --------<img id="imagem-insta" onerror="exibirImagemAlternativa()" alt=""> -->
+                    <div id="ultima-midia"></div>
                     <!-- Capturando o link pelo getElementById-->
                     <!-- <img src="https://scontent.cdninstagram.com/v/t51.29350-15/404576069_1653491178508305_5170880876954448341_n.heic?stp=dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=c4dd86&_nc_ohc=bcBgC5wf-KAAX8wv6R5&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBVxajHIEB3DBy0Z373XITt_YzrTM0UZ8cLwZ13hJFF5Q&oe=6565BC7B" alt=""> -->
                 </div>
             </div>
-            <video width="660" height="600" autoplay autostart controls muted>
-        <source id="imagem-insta" src="https://scontent.cdninstagram.com/o1/v/t16/f1/m69/GICWmACCdKchzo4CADMXJN12RqNSbq_EAAAF?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLmNsaXBzLnVua25vd24tQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=104&vs=427850368951634_3338696221&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSUNXbUFDQ2RLY2h6bzRDQURNWEpOMTJScU5TYnFfRUFBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dGNkFLUkhiLUlObFF1NENBT2d2RUNZZ0I1c1FicV9FQUFBRhUCAsgBACgAGAAbAYgHdXNlX29pbAExFQAAJuaP%2BajB5uo%2FFQIoAkMzLBdARjXCj1wo9hgSZGFzaF9iYXNlbGluZV8xX3YxEQB1AAA%3D&ccb=9-4&oh=00_AfBMiSIcxI6zVGLBzwMVNQOxkSsyPxvVb5BEDHOo4M9m8A&oe=656E8D11&_nc_sid=1d576d&_nc_rid=c3cccc01bc" type="video/mp4">
-    </video>
+            <!-- <video width="660" height="600" autoplay autostart controls muted>
+                <source id="imagem-insta"
+                    src="https://scontent.cdninstagram.com/o1/v/t16/f1/m69/GICWmACCdKchzo4CADMXJN12RqNSbq_EAAAF?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLmNsaXBzLnVua25vd24tQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=104&vs=427850368951634_3338696221&_nc_vs=HBksFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSUNXbUFDQ2RLY2h6bzRDQURNWEpOMTJScU5TYnFfRUFBQUYVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dGNkFLUkhiLUlObFF1NENBT2d2RUNZZ0I1c1FicV9FQUFBRhUCAsgBACgAGAAbAYgHdXNlX29pbAExFQAAJuaP%2BajB5uo%2FFQIoAkMzLBdARjXCj1wo9hgSZGFzaF9iYXNlbGluZV8xX3YxEQB1AAA%3D&ccb=9-4&oh=00_AfBMiSIcxI6zVGLBzwMVNQOxkSsyPxvVb5BEDHOo4M9m8A&oe=656E8D11&_nc_sid=1d576d&_nc_rid=c3cccc01bc"
+                    type="video/mp4">
+            </video> -->
         </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -84,8 +124,8 @@
         </div>
 
     </div>
-    
-    
+
+
     <script src="js/script.js"></script>
 </body>
 
