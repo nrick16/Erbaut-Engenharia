@@ -1,5 +1,5 @@
 // ---------------------------------------- TOKEN DE ACESSO DA API DO INSTAGRAM ---------------------------------------
-const token = 'IGQWRPengtdTZADU2lSMUhkajNkUDZAORXE3WHJ6ZAXJKLXVWeVByZAVF5UUp3dTc0N0FZAYzl3STBEeGtDUzZAFaGpRRmF6MG9ySjcxVVh5X3l2b1QxWW92QnJTLUZANN25VeEdlVFBwbllCODY5Nk9yZA0hMd1BNMTBLVlUZD'
+const token = 'IGQWRNYVJEdDREVU9OWjlFa21yTXllbkdtbkhEWTZANUHVycHl1RW5OQTRicWJGZATdPdW1kRjZAGS3lNdmdmMlFxXzZAnUS1yMnppRHpHbV9GblFkX0plSzE3V1RqeFlsRkhuMzhCODRiSEoycERWbmFYYXB5ZAWdnSmMZD'
 const url = "https://graph.instagram.com/me/media?access_token=" + token + "&fields=media_url,media_type,caption,permalink"
 
 // Endpoint da API do Instagram para obter informações sobre as postagens do usuário
